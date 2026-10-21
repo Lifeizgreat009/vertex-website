@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Vertex Caps</title>
+  <link rel="stylesheet" href="../assets/fonts/fonts.css" />
+  <link rel="stylesheet" href="../assets/icons/fontawesome.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/responsive.css" />
+</head>
+<body>
+  <!-- Splash / Intro -->
+  <div id="splash" aria-hidden="false">
+    <div class="splash-mark" aria-label="Vertex Caps" role="img">
+      <span class="splash-kicker">EST. 2026 / HEADWEAR DIVISION</span>
+      <span class="splash-word">VERTEX</span>
+      <span class="splash-line"></span>
+    </div>
+  </div>
+
+  <!-- Main site -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#top" class="brand-link" aria-label="Vertex Caps home"><span class="brand-symbol">V</span><span>VERTEX<span class="brand-suffix">/CAPS</span></span></a>
+      <nav class="nav" aria-label="Main navigation">
+        <button id="menuToggle" class="menu-toggle" aria-expanded="false" aria-controls="mainNav" aria-label="Open menu"><span></span><span></span><span></span></button>
+        <ul id="mainNav" class="nav-list">
+          <li><a href="#shop">Collection</a></li>
+          <li><a href="#about">Our edge</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button id="cartBtn" class="cart-trigger" aria-haspopup="dialog" aria-controls="cartPanel" aria-label="Open shopping cart"><i class="fa-solid fa-cart-shopping" aria-hidden="true"></i><span id="cartCount" class="cart-count">0</span></button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section id="hero" class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">01 / NEW SEASON — THE EVERYDAY PEAK</p>
+        <h1>Find your<br /><em>angle.</em></h1>
+        <p class="hero-copy">Precision-built caps for people who move with intention. Clean lines, considered fabrics, zero filler.</p>
+        <a class="cta" href="#shop">Shop the collection <span aria-hidden="true">↗</span></a>
+        <div class="hero-note"><span class="note-dot"></span> Made in Nigeria</div>
+      </div>
+      <div class="hero-image" aria-hidden="true">
+        <img src="../assets/images/hero-cap.jpg" alt="Black cap on a model" />
+      </div>
+    </section>
+
+    <section id="shop" class="shop">
+      <div class="section-heading"><div><p class="eyebrow">02 / THE COLLECTION</p><h2 class="section-title">Essentials, Refined.</h2></div><div class="shop-tools"><span id="productCount">04 pieces</span><select id="sortProducts" aria-label="Sort products"><option value="featured">Sort: Featured</option><option value="low">Price: Low to high</option><option value="high">Price: High to low</option></select></div></div>
+      <div id="products" class="product-grid" aria-live="polite"></div>
+    </section>
+
+    <section id="about" class="about">
+      <p class="eyebrow">03 / THE VERTEX STANDARD</p><div class="about-grid"><h2>Not just a cap.<br /><span>A point of view.</span></h2><p>We make essentials with an edge. Every Vertex cap is cut for comfort, finished with purpose, and designed to look better the more you wear it.</p></div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div><p class="eyebrow">04 / KEEP IN TOUCH</p><h2>Stay in the loop.</h2></div><form class="newsletter-form" id="newsletterForm"><label class="sr-only" for="email">Email address</label><input id="email" type="email" placeholder="Your email address" required /><button type="submit">Join ↗</button></form>
+    </section>
+  </main>
+
+  <!-- Shared Backdrop Overlay -->
+  <div id="drawerBackdrop" class="drawer-backdrop" aria-hidden="true"></div>
+
+  <!-- Cart Panel -->
+  <aside id="cartPanel" class="cart-panel" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="cartTitle">
+    <div class="cart-panel-inner">
+      <header class="cart-header">
+        <h3 id="cartTitle">Your bag <span id="cartHeaderCount">(0)</span></h3>
+        <button id="closeCart" class="close-button" aria-label="Close cart">×</button>
+      </header>
+      <div id="cartItems" class="cart-items"></div>
+      <div class="cart-footer">
+        <div class="cart-total"><span>Subtotal</span><strong id="cartTotal">₦0</strong></div><button id="checkoutBtn" class="btn-primary">Checkout <span>↗</span></button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Product Quick View Drawer -->
+  <aside id="quickViewModal" class="quick-view-panel" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="quickViewTitle">
+    <div class="quick-view-inner">
+      <header class="quick-view-header">
+        <span class="quick-view-kicker">PRODUCT OVERVIEW</span>
+        <button id="closeQuickView" class="close-button" aria-label="Close product view">×</button>
+      </header>
+      <div class="quick-view-body">
+        <div class="quick-view-image">
+          <img id="quickViewImg" src="" alt="" />
+        </div>
+        <div class="quick-view-details">
+          <h3 id="quickViewTitle" class="quick-view-title"></h3>
+          <div id="quickViewPrice" class="quick-view-price"></div>
+          <p id="quickViewDesc" class="quick-view-desc"></p>
+          <div class="quick-view-specs">
+            <div class="spec-item"><span>FIT</span><strong>Standard / Adjustable</strong></div>
+            <div class="spec-item"><span>MATERIAL</span><strong>Brushed Cotton Twill</strong></div>
+            <div class="spec-item"><span>ORIGIN</span><strong>Crafted in Nigeria</strong></div>
+          </div>
+          <button id="quickViewAddBtn" class="btn btn-primary quick-view-add">Add to bag <span>+</span></button>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Toast Notifications Container -->
+  <div id="toastContainer" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Replace the number below with the store owner's WhatsApp number (country code, no + or spaces). -->
+  <a class="whatsapp-badge" href="https://wa.me/2348038061010?text=Hello%20Vertex%20Caps%2C%20I%27d%20like%20to%20make%20an%20enquiry." target="_blank" rel="noopener noreferrer" aria-label="Chat with Vertex Caps on WhatsApp" title="Chat with us on WhatsApp">
+    <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+  </a>
+
+  <footer class="site-footer">
+    <div class="container footer-inner"><p>© <span id="year"></span> VERTEX CAPS</p><p>Made for every angle.</p><div class="social-links" aria-label="Social media links"><a href="https://x.com/vertexcaps" target="_blank" rel="noreferrer" aria-label="Vertex Caps on X" title="X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a><a href="https://instagram.com/vertexcaps" target="_blank" rel="noreferrer" aria-label="Vertex Caps on Instagram" title="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a><a href="https://www.tiktok.com/@vertexbrand7?is_from_webapp=1&sender_device=pc" target="_blank" rel="noreferrer" aria-label="Vertex Caps on TikTok" title="TikTok"><i class="fa-brands fa-tiktok" aria-hidden="true"></i></a><a href="mailto:hello@vertexcaps.com" aria-label="Email Vertex Caps" title="Email"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a></div></div>
+  </footer>
+
+  <script type="module" src="../js/ui.js"></script>
+</body>
+</html>
